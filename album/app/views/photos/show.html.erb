@@ -1,0 +1,22 @@
+<p>
+  <strong>Title:</strong>
+  <%= @photo.title %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @photo.description %>
+</p>
+
+<p>
+  <strong>Is Color:</strong>
+  <%= @photo.is_color %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @photo.rating %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
