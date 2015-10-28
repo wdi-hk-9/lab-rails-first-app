@@ -1,60 +1,26 @@
 Rails.application.routes.draw do
-  get 'tweets/index', to: 'tweets#index'
+  #resources for tweets
 
-  get 'tweets/show', to: 'tweets#show'
+  #index
+  get '/tweets', to: 'tweets#index'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  #show
+  get '/tweets/:id', to: 'tweets#show', as: 'tweet'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  #new genearte a form to eidt
+  get '/tweets/new', to: 'tweets#new'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #edit
+  get '/tweets/:id/edit', to: 'tweets#edit', as: "edit_tweet"
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #create
+  post '/tweets', to: 'tweets#create'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  #update
+  put '/tweets/:id', to: 'tweets#update'
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  #delete
+  put '/tweets/:id', to: 'tweets#destory'
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+resources :posts
 end
