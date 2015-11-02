@@ -1,7 +1,7 @@
 <h1>Twitter on Rails</h1>
   <h2>Listing Tweets</h2>
 <!-- <p>Find me in app/views/tweets/index.html.erb</p> -->
-<table>
+<table id='tweets'>
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
@@ -15,5 +15,5 @@
 </table>
 
 <nav>
-  <% link_to "New Tweet", tweets_new_path %>
+  <% link_to "New Tweet", new_tweet_path %>
 </nav>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/tweets/:id', to: 'tweets#show', as: 'tweet'
 
   #new genearte a form to eidt
-  get '/tweets/new', to: 'tweets#new'
+  get '/tweets/new', to: 'tweets#new', as: 'new_tweet'
 
   #edit
   get '/tweets/:id/edit', to: 'tweets#edit', as: "edit_tweet"
