@@ -1,0 +1,19 @@
+<h1>Twitter on Rails</h1>
+  <h2>Listing Tweets</h2>
+<!-- <p>Find me in app/views/tweets/index.html.erb</p> -->
+<table id='tweets'>
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td class='content'><% @tweets.tweet%></td>
+        <td><% Link to "Show", tweet_path(tweet) %></td>
+        <td><% Link to "Edit", edit_tweet_path(tweet) %></td>
+        <td><% Link to "Destroy", tweet_path(tweet), method: :delete,data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<nav>
+  <% link_to "New Tweet", new_tweet_path %>
+</nav>
